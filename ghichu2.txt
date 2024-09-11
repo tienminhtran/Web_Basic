@@ -1,0 +1,9 @@
+-------------------------------------------------------Tuan2 bai 4------------------------------------------------
+*dùng CLEAR khi cần tràn màn hình 100%
+*bỏ dấu chấm list-style-type: none
+*hình nền backgroung-image: url(link thư mục)
+*loại bỏ lặp chiều ngang hình nền background-repeat: repeat-y;
+*display: block: chiều dọc <ul>
+*<ul> <li> display: inline block: nằm ngang
+*gạch chấm chấm bên dưới nội dung: border-bottom: ..px dashed màu;
+*xác định vị trí cố định của background: background-attachment: fixed;
