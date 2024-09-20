@@ -1,0 +1,101 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenner{
+    width: 70%;
+    background-color: rgb(112, 171, 226);
+}
+ul{
+    margin: 0;
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+    padding:20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+header{
+    display: flex;
+    border-bottom: 5px dotted white
+
+}
+.tieude{
+    text-align: left;
+    margin-right: 0;
+    padding: 10px;
+    color: white;
+    text-shadow: 5px 5px 5px blue;
+}
+section{
+    display: flex;
+}
+footer{
+    padding: 20px;
+    border-top: 5px dotted rgb(255, 255, 255);
+    color: white;
+    text-align: center;
+}
+h1{
+    font-size: 40pt;
+    color: blue;
+    text-shadow: 5px 5px 5px blue;
+}
+h3{
+    font-size: 25pt;
+    color: blue;
+    font-family: Arial;
+    padding-left: 30px;
+}
+.tdn{
+    padding-left:100px;
+    margin-bottom: 40px;
+}
+.than p{
+    color: white;
+    padding-left: 5px;
+    font-size: 15pt;
+    padding-top: 20px;
+}
+h2{
+    margin-left: 5px;
+    margin-top: 20px;
+    color: white;
+    font-size: 25pt;
+}
+.hinh{
+    margin-left:100px;
+    width: 700px; ;
+}
+img{
+    width: 80%;
+}
+form table{
+    margin-left: 50px;
+    width: 100%;
+    font-size: 15pt;
+    color: white;
+    margin-top: 10px;
+}
+table input, select{
+   font-size: 15pt;
+}
+table input{
+    width: 322px;
+    height: 30px;
+    border-radius: 5px ;
+    margin: 5px;
+}
+textarea{
+    margin: 5px;
+    border-radius: 5px ;
+}
+.ngoaile input{
+    border: 8px dotted rgb(112, 171, 226);
+    padding: 0px;
+    height: 40px;
+}
