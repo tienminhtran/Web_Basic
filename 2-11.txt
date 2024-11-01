@@ -1,0 +1,37 @@
+
+----------------------------- JS BIEU THUC CHINH QUY-----------------------------------
+^[a-z0-9_-]{3,15}$
+
+	^ : Ký hiệu cho biết bắt đầu một dòng
+	[a-z0-9_-] : Cho biết là tập tự: a-z, số từ 0 - 9, ký tự -, ký tự _
+	{3,15} : Chuỗi dài 3 đến 15 ký tự
+	$ : Điểm kết thúc dòng
+	
+a-z: từ a tới z (thường
+A-Z: hoa
+a-Z: hoa-thường
+\wphù hợp với tất cả các ký tự từ (az, AZ, 0-9 và _)
+\Dphù hợp với tất cả các ký tự không phải chữ số. Nó ngược lại với\d
+\Wphù hợp với tất cả các ký tự không phải là từ
+\sphù hợp với tất cả các khoảng trắng bao gồm phím cách, phím tab và phím return
+*	Lặp lại 0 đến nhiều lần.
++	Lặp lại 1 hoặc nhiều lần
+
+
+Tên đăng nhập: bắt đầu là ký tự, có hoặc không có ký tự số, ký tự đặc biệt và 
+không được có khoảng trắng
+^[a-zA-Z]+[(0-9\&\$\.\^\@)]{0,}
+
+ Mật khẩu: từ 8 ký tự trở lên, có ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt 
+[(0-9){1,}(A-Z){1,}(\@\#\$\%){1,}]{8,}
+
+ Họ tên: Phải có ít nhất Họ, Tên. Ký tự đầu bắt buộc phải viết hoa
+
+Tran Minh
+TRAN  Tran
+[^(A-Z){1,}(a-Z){0,}\_{1,}]{1,}
+
+https://regexr.com/
+
+
+https://xuanthulab.net/bieu-thuc-chinh-quy-regexp.html#escape

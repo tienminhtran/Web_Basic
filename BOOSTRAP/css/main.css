@@ -1,0 +1,56 @@
+
+#web{
+    width: 1000px;
+    margin: 0px auto;
+    padding: 0px auto;
+}
+#dautrang{
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 155, 61);
+}
+#logo{
+    width: 150px;
+
+}
+#menu{
+    margin-left: 50px;
+    width: 700px;
+}
+#menu_ul {
+    display: flex;
+}
+#menu_ul>li {
+    padding: 15px;
+}
+
+#content{
+    display: flex;
+    border: 2px solid rgb(156, 156, 156);
+}
+#trai{
+    width: 700px;
+}
+#phai{
+    width: 300px;
+    background-color: rgb(182, 182, 182);
+
+}
+#loadtable{
+    border: 2px solid rgb(156, 156, 156);
+    height: 500px;
+}
+#chantrang{
+    text-align: center;
+    background-color: rgb(233, 155, 61);
+    height: 50px;
+}
+
+#tables{
+    border: 2px solid rgb(156, 156, 156);
+
+}
+#addd{
+    display: flex;
+    justify-content: space-around;
+}
