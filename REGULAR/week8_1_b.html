@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Facebook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            background-color: white;
+            width: 800px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .left {
+            background-color: #dfe3ee;
+            padding: 40px;
+            width: 50%;
+            text-align: center;
+            color: #333;
+        }
+        .left h2 {
+            font-size: 24px;
+            color: #333;
+        }
+        .left p {
+            font-size: 14px;
+            color: #666;
+        }
+        .right {
+            padding: 40px;
+            width: 50%;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 28px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .name-fields {
+            display: flex;
+            gap: 10px;
+        }
+        .name-fields input {
+            width: calc(50% - 5px);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+        <h2>Cảm ơn bạn đã ghé thăm!</h2>
+        <p>Chúng tôi mong sớm gặp lại bạn.</p>
+    </div>
+    <div class="right">
+        <h2>Đăng ký</h2>
+        <p class="subtitle">Miễn phí và sẽ luôn như vậy.</p>
+        <form id="signupForm" onsubmit="return validateForm()">
+            <div class="name-fields">
+                <input type="text" id="lastName" placeholder="Họ" required>
+                <input type="text" id="firstName" placeholder="Tên" required>
+            </div>
+            <input type="email" id="email" placeholder="Email đăng nhập" required>
+            <input type="email" id="confirmEmail" placeholder="Nhập lại Email" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <input type="text" id="birthYear" placeholder="Năm sinh" required>
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        // Validate name fields
+        var lastName = document.getElementById('lastName').value;
+        var firstName = document.getElementById('firstName').value;
+        if (lastName.charAt(0) !== lastName.charAt(0).toUpperCase() || firstName.charAt(0) !== firstName.charAt(0).toUpperCase()) {
+            alert("Họ và Tên phải bắt đầu bằng chữ hoa.");
+            return false;
+        }
+
+        // Validate email
+        var email = document.getElementById('email').value;
+        var confirmEmail = document.getElementById('confirmEmail').value;
+        var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            alert("Email không hợp lệ.");
+            return false;
+        }
+        if (email !== confirmEmail) {
+            alert("Email và Nhập lại Email phải trùng khớp.");
+            return false;
+        }
+
+        // Validate password
+        var password = document.getElementById('password').value;
+        var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        if (!passwordRegex.test(password)) {
+            alert("Mật khẩu phải có ít nhất 6 ký tự, bao gồm chữ và số.");
+            return false;
+        }
+
+        // Validate birth year
+        var birthYear = document.getElementById('birthYear').value;
+        if (isNaN(birthYear) || birthYear >= 2002) {
+            alert("Năm sinh phải nhỏ hơn 2002.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+</body>
+</html>

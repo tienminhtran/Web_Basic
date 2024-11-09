@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group {
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .button-group {
+            text-align: center;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            border: none;
+            color: #fff;
+            background-color: black;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+
+    <form id="registerForm">
+        <!-- Đăng nhập thông tin -->
+        <label for="txtDN">Tên đăng nhập:</label>
+        <input type="text" id="txtDN" required>
+
+        <label for="txtMK">Mật khẩu:</label>
+        <input type="password" id="txtMK" required>
+
+        <label for="txtXNMK">Nhập lại mật khẩu:</label>
+        <input type="password" id="txtXNMK" required>
+
+        <!-- Thông tin cá nhân -->
+        <h3>THÔNG TIN CÁ NHÂN</h3>
+
+        <label for="txtName">Họ và tên:</label>
+        <input type="text" id="txtName" required>
+
+        <label for="txtNgaySinh">Ngày sinh:</label>
+        <input type="date" id="txtNgaySinh">
+
+        <div class="radio-group">
+            <label>Giới tính:</label>
+            <label><input type="radio" name="gender" value="Nam" required> Nam</label>
+            <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+        </div>
+
+        <label for="txtDC">Địa chỉ:</label>
+        <input type="text" id="txtDC" required>
+
+        <label for="txtDT">Điện thoại:</label>
+        <input type="text" id="txtDT" required>
+
+        <label for="txtEmail">Email:</label>
+        <input type="email" id="txtEmail" required>
+
+        <!-- Nút đăng ký và hủy -->
+        <div class="button-group">
+            <button type="submit">Đăng ký</button>
+            <button type="reset">Hủy</button>
+        </div>
+    </form>
+
+    <div id="errorMessages"></div>
+</div>
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let errors = [];
+
+        // Kiểm tra tên đăng nhập
+        let username = document.getElementById('txtDN').value;
+        if (!/^[a-zA-Z][a-zA-Z0-9!@#$%^&*()_+]*$/.test(username)) {
+            errors.push("Tên đăng nhập phải bắt đầu bằng ký tự và không có khoảng trắng.");
+        }
+
+        // Kiểm tra mật khẩu
+        let password = document.getElementById('txtMK').value;
+        if (password.length < 8 || !/[0-9]/.test(password) || !/[A-Z]/.test(password) || !/[!@#$%^&*()_+]/.test(password)) {
+            errors.push("Mật khẩu phải từ 8 ký tự trở lên, có ít nhất 1 ký tự số, 1 ký tự in hoa, và 1 ký tự đặc biệt.");
+        }
+
+        // Kiểm tra nhập lại mật khẩu
+        let confirmPassword = document.getElementById('txtXNMK').value;
+        if (password !== confirmPassword) {
+            errors.push("Nhập lại mật khẩu phải giống mật khẩu.");
+        }
+
+        // Kiểm tra họ tên
+        let fullName = document.getElementById('txtName').value;
+        if (!/^[A-Z][a-z]+ [A-Z][a-z]+$/.test(fullName)) {
+            errors.push("Họ tên phải có ít nhất Họ, Tên và ký tự đầu phải viết hoa.");
+        }
+
+        // Kiểm tra ngày sinh (16 tuổi trở lên)
+        let birthDate = new Date(document.getElementById('txtNgaySinh').value);
+        let age = new Date().getFullYear() - birthDate.getFullYear();
+        if (age < 16) {
+            errors.push("Ngày sinh phải trên 16 tuổi.");
+        }
+
+        // Kiểm tra địa chỉ
+        let address = document.getElementById('txtDC').value;
+        if (address.trim() === "") {
+            errors.push("Địa chỉ không được để trống.");
+        }
+
+        // Kiểm tra điện thoại
+        let phone = document.getElementById('txtDT').value;
+        if (!/^(09|03|07|06|05|04)\d{8}$/.test(phone)) {
+            errors.push("Điện thoại phải có 10 ký tự, bắt đầu bằng các mã như 09, 03, 07, 06, 05, 04.");
+        }
+
+        // Kiểm tra email
+        let email = document.getElementById('txtEmail').value;
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.push("Email không đúng định dạng.");
+        }
+
+        // Hiển thị lỗi nếu có
+        let errorMessages = document.getElementById('errorMessages');
+        errorMessages.innerHTML = "";
+        if (errors.length > 0) {
+            errors.forEach(function(error) {
+                let errorMessage = document.createElement('p');
+                errorMessage.classList.add('error');
+                errorMessage.textContent = error;
+                errorMessages.appendChild(errorMessage);
+            });
+        } else {
+            alert("Đăng ký thành công!");
+        }
+    });
+</script>
+
+</body>
+</html>
