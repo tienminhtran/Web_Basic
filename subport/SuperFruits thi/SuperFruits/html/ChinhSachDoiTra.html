@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Đổi Trả - Super Fruit</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styling for table and layout */
+        
+        .policy-section {
+            max-width: 100%;
+            margin-left: 20px;
+        }
+        
+        table {
+            width: 70%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            /* Canh lề trái cho nội dung */
+        }
+        
+        th {
+            background-color: #00DD00;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Thư viện để thêm các icon mạng xã hội-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Latest compiled JavaScript -->
+    <!--Thư viện để hoạt động nút collapse button-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/js-addtocart.js"></script>
+    <style>
+        .logo {
+            height: 70px;
+            width: 70px;
+        }
+        
+        #header {
+            height: 145px;
+        }
+        
+        .header-top {
+            background-color: #00aa00;
+        }
+        
+        .header-short-information {
+            font-size: 12px;
+        }
+        
+        .header-short-information .shop-name {
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+        
+        .social-icons li a {
+            color: white;
+        }
+        
+        .nav-item {
+            margin-left: 20px;
+        }
+        
+        .navbar form {
+            margin-right: 20px;
+        }
+        
+        .navbar button {
+            background-color: #00aa00;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item-left {
+            text-decoration: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            border-radius: 0.75rem;
+            color: black;
+            & i {
+                padding: 5px;
+            }
+        }
+        /* Auto dropdown (dropdown list) */
+        
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+        /* navbar-hover-css */
+        
+        nav.circle ul li a {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        nav.circle ul li a:after {
+            display: block;
+            position: absolute;
+            margin: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: ".";
+            color: transparent;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            background: transparent;
+        }
+        
+        nav.circle ul li a:hover:after {
+            -webkit-animation: circle 1.5s ease-in forwards;
+        }
+        
+        @-webkit-keyframes circle {
+            0% {
+                width: 1px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                height: 1px;
+                z-index: -1;
+                background: #eee;
+                border-radius: 100%;
+            }
+            100% {
+                background: #00aa00;
+                height: 5000%;
+                width: 5000%;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: 0;
+            }
+        }
+        /* Sidebar css */
+        
+        .sidebar {
+            background-color: rgb(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+    <div id="header" class="fixed-top">
+        <div class="header-top border-bottom py-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <p class="header-short-information text-center text-white m-0 ">
+                            <strong class="shop-name">Super Fruit</strong> <i> | Trái cây không chỉ là thức ăn, mà còn
+                            là nghệ thuật sống.</i>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <ul class="social-icons d-flex justify-content-end gap-3 list-unstyled m-0">
+                            <li class="pe-2">
+                                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="pe-2">
+                                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="pe-2">
+                                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white circle border-bottom ps-5">
+            <div class="container-fluid">
+                <a class="navbar-brand p-2"><img src="../img/lop3 [Converted]-02.png" class="logo"><strong style="color:darkolivegreen; letter-spacing: 5px; margin-left: 10px;">Super
+                    Fruits</strong></a>
+                <!--Toggler button-->
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <!--Side bar-->
+                <div class="sidebar offcanvas offcanvas-start" id="offcanvasNavbar2">
+                    <!--Sidebar Header-->
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label"><img src="../img/lop3 [Converted]-02.png" style="height: 70px; width: 70px;"></h5>
+                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <!--SideBar Body-->
+                    <div class="offcanvas-body d-flex flex-column flex-column flex-lg-row p-4 ">
+                        <ul class="navbar-nav pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/home.html">Trang chủ</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sản
+                                phẩm</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../html/danh-sach-sp-nhap-khau.html">Trái cây
+                                        nhập
+                                        khẩu</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="../html/danh-sach-sp-noi-dia.html">Trái cây nội
+                                        địa</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Sản phẩm khác</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Về chúng tôi</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex ms-3">
+                            <input class="form-control" type="search" placeholder="Tìm kiếm...">
+                            <button class="btn btn-outline-success" type="submit"><i
+                                class="fa-solid fa-magnifying-glass m-0"></i></button>
+                        </form>
+                        <div class="d-flex flex-column flex-lg-row gap-3">
+                            <a class="nav-item-left" href="">
+                                <i class="fas fa-user-plus icon"></i>Đăng ký
+                            </a>
+                            <a class="nav-item-left" href="">
+                                <i class="fas fa-sign-in-alt icon"></i>Đăng nhập
+                            </a>
+                            <a class="nav-item-left" href="../html/cart.html">
+                                <span id="cart-item-quantity" class="text-danger">(0)</span>
+                                <i class="fas fa-shopping-cart icon"></i>Giỏ hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="policy-section" style="margin-top: 200px;">
+            <h2>Chính Sách Đổi Trả</h2>
+
+            <h3>I. Thời Hạn Đổi Trả</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Loại trái cây</th>
+                        <th>Ví dụ</th>
+                        <th>Thời hạn đổi trả</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Trái cây tươi ăn liền</td>
+                        <td>Táo, nho, cherry, dừa, việt quất, xoài tứ quý...</td>
+                        <td><b>48h (2 ngày)</b> kể từ lúc nhận hàng</td>
+                    </tr>
+                    <tr>
+                        <td>Trái cây chờ chín</td>
+                        <td>Đu đủ, bơ, chuối...</td>
+                        <td><b>168h (7 ngày)</b> kể từ lúc nhận hàng</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><em>Lưu ý: Thời gian đổi trả có thể linh động tuỳ vào tính chất của từng loại trái cây và mùa vụ trong mỗi thời điểm.</em></p>
+            <p><em>Ví dụ: Vào mùa mưa, trái đu đủ lâu chín hơn mùa nắng (7-10 ngày), nên thời hạn bảo hành có thể kéo dài hơn so với bình thường.</em></p>
+
+            <h3>II. Kênh Tiếp Nhận Đổi Trả</h3>
+            <ul>
+                <li>Tại cửa hàng đã mua sản phẩm</li>
+                <li>Tại trang Facebook (<a href="https://facebook.com/superfruit" target="_blank">Super Fruit</a>) hoặc Instagram (<a href="https://instagram.com/superfruit.vn" target="_blank">superfruit.vn</a>)</li>
+                <li>Thông qua Hotline 0123456789 (8:00 - 22:00)</li>
+            </ul>
+
+            <h3>III. Phương Thức Đổi Trả</h3>
+            <ul>
+                <li>Đổi sản phẩm mới</li>
+                <li>Tặng voucher</li>
+                <li>Hoàn tiền</li>
+            </ul>
+            <p><em>Phương thức đổi trả có thể linh động dựa vào mức độ lỗi của trái cây và nguyện vọng của khách hàng.</em></p>
+
+            <h3>IV. Các Trường Hợp Được Đổi Trả</h3>
+            <ul>
+                <li>Sản phẩm giao sai hoặc giao thiếu theo đơn hàng</li>
+                <li>Sản phẩm bị lỗi chất lượng, hư hỏng do lỗi của nhà sản xuất</li>
+                <li>Sản phẩm có dấu hiệu đã qua sử dụng hoặc hết hạn sử dụng tại thời điểm nhận hàng</li>
+                <li>Sản phẩm bị hư hỏng, cấn dập trong quá trình vận chuyển tới khách hàng</li>
+            </ul>
+
+            <h3>V. Điều Kiện Đổi Trả Sản Phẩm</h3>
+            <ul>
+                <li>Sản phẩm trái cây được mua tại các hệ thống chính thức của Super Fruit (Khách hàng cung cấp số điện thoại có lịch sử mua hàng trên hệ thống)</li>
+                <li>Sản phẩm trái cây được bảo quản đúng cách, theo khuyến cáo của Super Fruit</li>
+            </ul>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer">
+        <footer class="row p-3 border-top">
+            <div class="col-md-4 mb-3">
+                <h5>Về chúng tôi</h5>
+                <div class="">
+                    <img src="../img/lop3 [Converted]-02.png" class="logo m-2" style="float: left;">
+
+                    <p class="text-muted" style="text-align: justify;"><strong>Super Fruits</strong> tự hào là địa chỉ tin cậy cung cấp những loại trái cây tươi ngon, an toàn và chất lượng cao. Với sự chọn lọc kỹ lưỡng từ những vườn trái cây tốt nhất, chúng tôi mang đến sự đa dạng phong phú từ trái cây
+                        nội địa đến nhập khẩu. SuperFruits không chỉ cam kết về độ tươi mới mà còn đảm bảo giá trị dinh dưỡng vượt trội, giúp bạn và gia đình duy trì lối sống lành mạnh, bổ sung vitamin mỗi ngày. Chọn SuperFruits, bạn chọn sự tươi ngon
+                        và chất lượng trong từng miếng trái cây
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h5>Tin tức</h5>
+                <ul class="nav flex-column">
+                    <li class="mb-2 d-flex">
+                        <img src="../img/banner1.png" alt="" style="width: 100px; height: 50px;">
+                        <a href="#" class="p-2 text-muted text-decoration-none">Tin tức 1</a>
+                    </li>
+                    <li class="mb-2 d-flex">
+                        <img src="../img/banner1.png" alt="" style="width: 100px; height: 50px;">
+                        <a href="#" class="p-2 text-muted text-decoration-none">Tin tức 1</a>
+                    </li>
+                    <li class="mb-2 d-flex">
+                        <img src="../img/banner1.png" alt="" style="width: 100px; height: 50px;">
+                        <a href="#" class="p-2 text-muted text-decoration-none">Tin tức 1</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-md-2 mb-3">
+                <h5>Hỗ trợ khách hàng</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Câu hỏi thường gặp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hướng dẫn đặt hàng</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách đổi trả</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Phương thức vận chuyển</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-sm-2 mb-3">
+                <h5>Liên hệ</h5>
+                <ul class="nav text-decoration-none flex-column">
+                    <li class="nav-item mb-2 p-0 text-muted">Hotline: 0123456789</li>
+                    <li class="nav-item mb-2 p-0 text-muted">Email: superfruit@gmail.com</li>
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>

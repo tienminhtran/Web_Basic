@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Bảo Mật- Super Fruit</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styling for table and layout */
+        
+        .policy-section {
+            max-width: 100%;
+            margin-left: 20px;
+        }
+        
+        table {
+            width: 70%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+            /* Canh lề trái cho nội dung */
+        }
+        
+        th {
+            background-color: #00DD00;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Thư viện để thêm các icon mạng xã hội-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Latest compiled JavaScript -->
+    <!--Thư viện để hoạt động nút collapse button-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/js-addtocart.js"></script>
+    <style>
+        .logo {
+            height: 70px;
+            width: 70px;
+        }
+        
+        #header {
+            height: 145px;
+        }
+        
+        .header-top {
+            background-color: #00aa00;
+        }
+        
+        .header-short-information {
+            font-size: 12px;
+        }
+        
+        .header-short-information .shop-name {
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+        
+        .social-icons li a {
+            color: white;
+        }
+        
+        .nav-item {
+            margin-left: 20px;
+        }
+        
+        .navbar form {
+            margin-right: 20px;
+        }
+        
+        .navbar button {
+            background-color: #00aa00;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item-left {
+            text-decoration: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            border-radius: 0.75rem;
+            color: black;
+            & i {
+                padding: 5px;
+            }
+        }
+        /* Auto dropdown (dropdown list) */
+        
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+        /* navbar-hover-css */
+        
+        nav.circle ul li a {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        nav.circle ul li a:after {
+            display: block;
+            position: absolute;
+            margin: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: ".";
+            color: transparent;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            background: transparent;
+        }
+        
+        nav.circle ul li a:hover:after {
+            -webkit-animation: circle 1.5s ease-in forwards;
+        }
+        
+        @-webkit-keyframes circle {
+            0% {
+                width: 1px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                height: 1px;
+                z-index: -1;
+                background: #eee;
+                border-radius: 100%;
+            }
+            100% {
+                background: #00aa00;
+                height: 5000%;
+                width: 5000%;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: 0;
+            }
+        }
+        /* Sidebar css */
+        
+        .sidebar {
+            background-color: rgb(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+    <div id="header" class="fixed-top">
+        <div class="header-top border-bottom py-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <p class="header-short-information text-center text-white m-0 ">
+                            <strong class="shop-name">Super Fruit</strong> <i> | Trái cây không chỉ là thức ăn, mà còn
+                            là nghệ thuật sống.</i>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <ul class="social-icons d-flex justify-content-end gap-3 list-unstyled m-0">
+                            <li class="pe-2">
+                                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="pe-2">
+                                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="pe-2">
+                                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white circle border-bottom ps-5">
+            <div class="container-fluid">
+                <a class="navbar-brand p-2"><img src="../img/lop3 [Converted]-02.png" class="logo"><strong style="color:darkolivegreen; letter-spacing: 5px; margin-left: 10px;">Super
+                    Fruits</strong></a>
+                <!--Toggler button-->
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <!--Side bar-->
+                <div class="sidebar offcanvas offcanvas-start" id="offcanvasNavbar2">
+                    <!--Sidebar Header-->
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label"><img src="../img/lop3 [Converted]-02.png" style="height: 70px; width: 70px;"></h5>
+                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <!--SideBar Body-->
+                    <div class="offcanvas-body d-flex flex-column flex-column flex-lg-row p-4 ">
+                        <ul class="navbar-nav pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/home.html">Trang chủ</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sản
+                                phẩm</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../html/danh-sach-sp-nhap-khau.html">Trái cây
+                                        nhập
+                                        khẩu</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="../html/danh-sach-sp-noi-dia.html">Trái cây nội
+                                        địa</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Sản phẩm khác</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Về chúng tôi</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex ms-3">
+                            <input class="form-control" type="search" placeholder="Tìm kiếm...">
+                            <button class="btn btn-outline-success" type="submit"><i
+                                class="fa-solid fa-magnifying-glass m-0"></i></button>
+                        </form>
+                        <div class="d-flex flex-column flex-lg-row gap-3">
+                            <a class="nav-item-left" href="">
+                                <i class="fas fa-user-plus icon"></i>Đăng ký
+                            </a>
+                            <a class="nav-item-left" href="">
+                                <i class="fas fa-sign-in-alt icon"></i>Đăng nhập
+                            </a>
+                            <a class="nav-item-left" href="../html/cart.html">
+                                <span id="cart-item-quantity" class="text-danger">(0)</span>
+                                <i class="fas fa-shopping-cart icon"></i>Giỏ hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+  
+        
+
+<div class="container my-5" style="margin-top: 200px;padding-top: 150px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Chính Sách Bảo Mật</h2>
+            <h2 class="mb-4">1. Mục đích áp dụng</h2>
+            <p>Chính sách bảo mật và chia sẻ thông tin này (“Chính Sách”) nhằm đảm bảo an toàn thông tin liên quan đến các tổ chức, cá nhân tham gia truy cập và/hoặc giao dịch trên website <strong><a href="">www.SuperFruit.com</a></strong> thuộc quyền sở hữu của Công ty TNHH Xuất Nhập Khẩu SuperFruit (sau đây gọi chung là “SuperFruit”).</p>
+            <p>Chính Sách này mô tả cách SuperFruit tiếp nhận, tổng hợp, lưu giữ, sử dụng và bảo vệ thông tin của các tổ chức, cá nhân tham gia truy cập, giao dịch trên SuperFruit (“Khách Hàng”). Việc Khách Hàng truy cập hoặc thực hiện giao dịch trên SuperFruit được hiểu là Khách Hàng đã đọc, hiểu và đồng ý tuân thủ Chính Sách này, kể cả các phiên bản sửa đổi, bổ sung của Chính Sách. Phiên bản sửa đổi, bổ sung Chính Sách này (nếu có) sẽ có hiệu lực sau 5 ngày kể từ ngày việc sửa đổi, bổ sung Chính Sách được thông báo trên SuperFruit.</p>
+            
+            <h3 class="mt-4">2. Quy định cụ thể</h3>
+            
+            <h4 class="mt-3">2.1. Về việc thu thập thông tin</h4>
+            <ul>
+                <li>Khi Khách Hàng thực hiện giao dịch và/hoặc đăng ký mở tài khoản tại SuperFruit, tùy từng thời điểm, Khách Hàng phải cung cấp một số thông tin cần thiết cho việc thực hiện giao dịch và/hoặc đăng ký tài khoản (“Thông Tin Khách Hàng”).</li>
+                <li>Khách Hàng có trách nhiệm đảm bảo những thông tin Khách Hàng cung cấp là đầy đủ và chính xác và luôn cập nhật thông tin để đảm bảo tính đầy đủ và chính xác. SuperFruit không chịu trách nhiệm giải quyết bất kỳ tranh chấp nào nếu thông tin Khách Hàng cung cấp không chính xác hoặc không được cập nhật hoặc giả mạo.</li>
+            </ul>
+            
+            <h4 class="mt-3">2.2. Về việc lưu giữ và bảo mật thông tin riêng</h4>
+            <ul>
+                <li>Thông Tin Khách Hàng, cũng như các thông tin trao đổi giữa Khách Hàng và SuperFruit, đều được lưu giữ và bảo mật bởi hệ thống của SuperFruit, riêng thông tin thẻ thanh toán của Khách Hàng sẽ do các đối tác Cổng thanh toán của SuperFruit bảo mật theo tiêu chuẩn quốc tế PCI DSS.</li>
+                <li>SuperFruit có các biện pháp thích hợp về kỹ thuật và an ninh để ngăn chặn việc truy cập, sử dụng trái phép Thông Tin Khách Hàng. SuperFruit cũng thường xuyên phối hợp với các chuyên gia bảo mật nhằm cập nhật những thông tin mới nhất về an ninh mạng để đảm bảo sự an toàn cho Thông Tin Khách Hàng khi Khách Hàng truy cập, đăng ký mở tài khoản và/hoặc sử dụng các tính năng của SuperFruit.</li>
+                <li>Các thông tin thẻ thanh toán của Khách Hàng được các đối tác cổng thanh toán của SuperFruit bảo vệ theo tiêu chuẩn quốc tế. SuperFruit không cho phép các bên thứ ba theo dõi hoặc thu thập thông tin của Khách Hàng trên các website thành phần của SuperFruit.</li>
+                <li>Đối với các tài khoản đã đóng chúng tôi vẫn lưu trữ Thông Tin Cá Nhân và truy cập của Khách Hàng để phục vụ cho các mục đích phòng chống gian lận, điều tra, giải đáp thắc mắc… Các Thông Tin Cá Nhân này sẽ được SuperFruit lưu giữ trên hệ thống máy chủ tối đa trong vòng 12(mười hai) tháng kể từ ngày Khách Hàng đóng tài khoản trên SuperFruit. Sau khi thời hạn này kết thúc, SuperFruit sẽ tiến hành xóa vĩnh viễn Thông Tin Cá Nhân của Bạn.</li>
+                <li>Khách Hàng tuyệt đối không được có bất kỳ hành vi sử dụng công cụ, chương trình để can thiệp trái phép vào hệ thống hay làm thay đổi cấu trúc dữ liệu của SuperFruit, cũng như bất kỳ hành vi nào khác nhằm phát tán, cổ vũ cho các hoạt động với mục đích can thiệp, phá hoại hay xâm nhập vào dữ liệu của hệ thống SuperFruit, cũng như các hành vi mà pháp luật Việt Nam nghiêm cấm.</li>
+            </ul>
+            
+            <h4 class="mt-3">2.3. Về việc sử dụng Thông Tin Khách Hàng</h4>
+            <ul>
+                <li>SuperFruit có quyền sử dụng các thông tin Khách Hàng cung cấp, bao gồm nhưng không giới hạn ở Thông Tin Khách Hàng để:</li>
+                <ul>
+                    <li>Cung cấp các dịch vụ/tiện ích cho Khách Hàng dựa trên nhu cầu và các thói quen của Khách Hàng khi truy cập vào SuperFruit;</li>
+                    <li>Gửi các thông báo, trao đổi thông tin giữa Khách Hàng với SuperFruit, các website khác của Công ty TNHH XNK SuperFruit, hoặc ngược lại;</li>
+                    <li>Phát hiện, ngăn chặn các hoạt động giả mạo, phá hoại tài khoản của Khách Hàng hoặc các hoạt động giả mạo nhận dạng của Khách Hàng trên SuperFruit;</li>
+                    <li>Liên lạc, hỗ trợ liên lạc và giải quyết với Khách Hàng trong những trường hợp đặc biệt.</li>
+                </ul>
+            </ul>
+            
+            <h4 class="mt-3">2.4. Về việc liên kết với các website khác</h4>
+            <ul>
+                <li>Khách Hàng có trách nhiệm bảo vệ thông tin tài khoản của mình và không cung cấp bất kỳ thông tin nào liên quan đến tài khoản và mật khẩu truy cập trên SuperFruit trên các website khác ngoại trừ khi đăng nhập vào địa chỉ chính thức của SuperFruit tại www.SuperFruit.com.</li>
+                <li>Khách Hàng không chịu trách nhiệm về những vấn đề phát sinh khi Khách Hàng truy cập vào SuperFruit từ các website khác không phải là website chính thức của SuperFruit.</li>
+            </ul>
+
+            <h4 class="mt-3">2.5. Về việc chia sẻ Thông Tin Khách Hàng</h4>
+            <ul>
+                <li>SuperFruit không cung cấp Thông Tin Khách Hàng cho bất kỳ bên thứ ba nào trừ trường hợp phải thực hiện theo yêu cầu của các cơ quan Nhà nước có thẩm quyền, hoặc theo quy định của pháp luật, hoặc khi việc cung cấp thông tin đó là cần thiết để SuperFruit cung cấp dịch vụ/tiện ích cho Khách Hàng (ví dụ: cung cấp các thông tin giao nhận cần thiết cho các đơn vị đối tác vận chuyển …).</li>
+                <li>SuperFruit sẽ có thông báo cụ thể cho Khách Hàng khi phải tiết lộ Thông Tin Khách Hàng cho một bên thứ ba. Trong trường hợp này, SuperFruit cam kết sẽ chỉ tiết lộ Thông Tin Khách Hàng khi được sự đồng ý của Khách Hàng.</li>
+                <li>SuperFruit có thể chia sẻ Thông Tin Khách Hàng cho các mục đích sau:</li>
+                <ul>
+                    <li>Nghiên cứu thị trường và các báo cáo phân tích.</li>
+                    <li>Trao đổi Thông Tin Khách Hàng với các công ty khác trong Công ty TNHH Xuất Nhập Khẩu SuperFruit và các đối tác có ký kết thỏa thuận liên kết chăm sóc khách hàng với SuperFruit.</li>
+                    <li>Trao đổi Thông Tin Khách Hàng với các bên thứ 3 là đối tác, đại lý của SuperFruit.</li>
+                    <li>Trao đổi Thông Tin Khách Hàng với các đối tác quảng cáo.</li>
+                    <li>Trao đổi Thông Tin Khách Hàng với những đơn vị kinh doanh khác mà SuperFruit có kế hoạch sáp nhập hoặc mua lại.</li>
+                </ul>
+            </ul>
+
+            <h4 class="mt-3">2.6. Sử dụng Cookie</h4>
+            <p>SuperFruit cung cấp các tập tin cookie hoặc các công nghệ tương tự, nhằm thu thập các thông tin như: lịch sử truy cập, các lựa chọn của Khách Hàng khi truy cập và sử dụng tính năng của SuperFruit… nhằm tăng trải nghiệm bảo mật và giúp SuperFruit hiểu rõ nhu cầu, sở thích của Khách Hàng để có thể cung cấp dịch vụ tốt hơn.</p>
+            <h4 class="mt-3"> 2.7. Liên hệ, giải đáp thắc mắc</h4>
+            <p>Bất kỳ khi nào Khách Hàng cần hỗ trợ, hãy gọi đến số hotline của SuperFruit 091.4411.293 hoặc gửi email đến địa chỉ: <a href="">hello.SuperFruit@gmail.com</a></p>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <footer class="row p-3 border-top">
+            <div class="col-md-4 mb-3">
+                <h5>Về chúng tôi</h5>
+                <div class="">
+                    <img src="../img/lop3 [Converted]-02.png" class="logo m-2" style="float: left;">
+
+                    <p class="text-muted" style="text-align: justify;"><strong>Super Fruits</strong> tự hào là địa chỉ tin cậy cung cấp những loại trái cây tươi ngon, an toàn và chất lượng cao. Với sự chọn lọc kỹ lưỡng từ những vườn trái cây tốt nhất, chúng tôi mang đến sự đa dạng phong phú từ trái cây
+                        nội địa đến nhập khẩu. SuperFruit không chỉ cam kết về độ tươi mới mà còn đảm bảo giá trị dinh dưỡng vượt trội, giúp bạn và gia đình duy trì lối sống lành mạnh, bổ sung vitamin mỗi ngày. Chọn SuperFruit, bạn chọn sự tươi ngon
+                        và chất lượng trong từng miếng trái cây
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h5>Tin tức</h5>
+                <ul class="nav flex-column">
+                    <li class="mb-2 d-flex">
+                        <img src="../img/banner1.png" alt="" style="width: 100px; height: 50px;">
+                        <a href="#" class="p-2 text-muted text-decoration-none">Tin tức 1</a>
+                    </li>
+                    <li class="mb-2 d-flex">
+                        <img src="../img/banner1.png" alt="" style="width: 100px; height: 50px;">
+                        <a href="#" class="p-2 text-muted text-decoration-none">Tin tức 1</a>
+                    </li>
+                    <li class="mb-2 d-flex">
+                        <img src="../img/banner1.png" alt="" style="width: 100px; height: 50px;">
+                        <a href="#" class="p-2 text-muted text-decoration-none">Tin tức 1</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-md-2 mb-3">
+                <h5>Hỗ trợ khách hàng</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Câu hỏi thường gặp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hướng dẫn đặt hàng</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chính sách đổi trả</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Phương thức vận chuyển</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-sm-2 mb-3">
+                <h5>Liên hệ</h5>
+                <ul class="nav text-decoration-none flex-column">
+                    <li class="nav-item mb-2 p-0 text-muted">Hotline: 0123456789</li>
+                    <li class="nav-item mb-2 p-0 text-muted">Email: superfruit@gmail.com</li>
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>

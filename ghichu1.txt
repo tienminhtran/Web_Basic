@@ -1,1 +1,74 @@
-Dùng phần tử <ol> để xác định một danh sách có thứ tựMột danh sách không có thứ tự bắt đầu với thẻ <ul>. Mỗi mục trong danh sách bắt đầu với thẻ <li>.Dùng phần tử <li> để xác định một danh mục CỤM NHAU:  <ul>      <li style="list-style-type: disc">Disc</li>      <li style="list-style-type: circle">Circle</li>      <li style="list-style-type: square">Square</li>      <li style="list-style-type: none">None</li></ul>--------------<ol type="i">  <li>Coffee</li>  <li>Tea</li>  <li>Milk</li></ol>		*** <ul>Xác định một danh sách không có thứ tự<ol>Xác định một danh sách có thứ tự<li>Xác định một danh mục<dl>Xác định một danh mục mô tả<dt>Xác định một thuật ngữ (tên)<dd>Mô tả một thuật ngữ trong danh sách mô tả
+﻿Dùng phần tử <ol> để xác định một danh sách có thứ tự
+Một danh sách không có thứ tự bắt đầu với thẻ <ul>. Mỗi mục trong danh sách bắt đầu với thẻ <li>.
+Dùng phần tử <li> để xác định một danh mục 
+CỤM NHAU:  <ul>
+
+      <li style="list-style-type: disc">Disc</li>
+
+      <li style="list-style-type: circle">Circle</li>
+
+      <li style="list-style-type: square">Square</li>
+
+      <li style="list-style-type: none">None</li>
+
+</ul>
+
+
+--------------
+<ol type="i">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+		
+*** 
+<ul>Xác định một danh sách không có thứ tự
+<ol>Xác định một danh sách có thứ tự
+<li>Xác định một danh mục
+<dl>Xác định một danh mục mô tả
+<dt>Xác định một thuật ngữ (tên)
+<dd>Mô tả một thuật ngữ trong danh sách mô tả
+
+
+ON THI CUOI KY
+
+DANG KY HOC TIÊNG ANH
+- INPUT NAME: HỌ TÊN
+- INPUT PHONE: SO DIEN THOAI
+- INPUT NGÀY SINH: NGAY/ THÁNG/ NĂM SINH
+- GIOI TINH: (RADIS)
+- KHÓA HỌC ĐĂNG KÝ: (LIST) TOIEC 2 KỸ NĂNG; TOIEC 4 KỸ NĂNG; GIAO TIẾP; IELTS
+- LỊCH HỌC: (CHECK BOX) THỨ 2-4: 18PM ; THỨ 3-5: 18PM; THỨ 6-CN: 18PM
+- MỤC TIÊU (2 INPUT) GỒM: LC, RD cho người dùng tự nhập. MỘT TEXT THEO CÔNG THỨC: (LC + RD)*5 
+- ẢNH ĐẠI DIỆN
+
+TEXT NGÀY CHECK BOT (TÍCH NHIỀU) LIST RADIS (CHỌN 1) HÌNH
+
+
+- TẤT CẢ THÔNG TIN KHÔNG ĐƯỢC RỖNG
+- SỐ ĐIỆN THOẠI CÓ 10 SỐ VÀ ĐẦU TIÊN LÀ 0
+- NGÀY SINH PHẢI LỚN HƠN 18 TUỔI
+- LỊCH HỌC BUỘC PHẢI CHỌN ÍT NHẤT 2 CA
+- MỤC TIÊU LC VÀ RC: LỚN 5 VÀ NHỎ 495
+
+
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<a href="" data-toggle="modal" data-target="#mymodal">FORM ĐĂNG KÝ</a>
+    <div class="modal fade" id="mymodal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+<form>
+
+</…
+
+
+/
+/
+/
+
+

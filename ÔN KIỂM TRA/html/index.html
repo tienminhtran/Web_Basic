@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submission with Table</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css//bootstrap.min.css" />
+    <style>
+      body {
+        padding: 20px;
+      }
+      table {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form Submission Example</h2>
+
+      <!-- Button to Open Modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#mymodal"
+      >
+        Open Form
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="mymodal" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="formModalLabel">
+                Submit Information
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="form">
+                <div class="form-group">
+                  <label for="Hovaten">Họ và tên:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Hovaten"
+                    placeholder="Nhập họ tên"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="Sdt">Số điện thoại:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Sdt"
+                    placeholder="Nhập số điện thoại"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="ngaysinh">Ngày sinh:</label>
+                  <input type="date" class="form-control" id="ngaysinh" />
+                </div>
+                <div class="form-group">
+                  <label>Giới tính:</label><br />
+                  <input type="radio" name="gioitinh" value="Nam" /> Nam<br />
+                  <input type="radio" name="gioitinh" value="Nữ" /> Nữ
+                </div>
+                <div class="form-group">
+                  <label for="khoahoc">Khóa học:</label>
+                  <select class="form-control" id="khoahoc">
+                    <option value="TOEIC 2 Kỹ Năng">TOEIC 2 Kỹ Năng</option>
+                    <option value="TOEIC 4 Kỹ Năng">TOEIC 4 Kỹ Năng</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Lịch học:</label><br />
+                  <input type="checkbox" name="lichhoc" value="Thứ 2-4" /> Thứ
+                  2-4 18h<br />
+                  <input type="checkbox" name="lichhoc" value="Thứ 3-5" /> Thứ
+                  3-5 18h<br />
+                  <input type="checkbox" name="lichhoc" value="Thứ 6-CN" /> Thứ
+                  6-CN 18h
+                </div>
+                <div class="form-group">
+                  <label for="lc">Mục tiêu LC:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="lc"
+                    placeholder="LC"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="rd">Mục tiêu RD:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="rd"
+                    placeholder="RD"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="avt">Ảnh đại diện:</label>
+                  <input type="file" class="form-control-file" id="avt" />
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng Ký</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Họ và tên</th>
+            <th>Số điện thoại</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Khóa học</th>
+            <th>Lịch học</th>
+            <th>Tổng điểm</th>
+            <th>Ảnh đại diện</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script>
+      const forms = document.getElementById("form");
+      const table = document.getElementById("table").querySelector("tbody");
+
+      forms.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const Hovaten = document.getElementById("Hovaten").value;
+        const Sdt = document.getElementById("Sdt").value;
+        const ngaysinh = document.getElementById("ngaysinh").value;
+        const gioitinh = document.querySelector(
+          'input[name="gioitinh"]:checked'
+        );
+        const gioitinhValue = gioitinh ? gioitinh.value : "Không chọn";
+        const khoahoc = document.getElementById("khoahoc").value;
+
+        const lichhoc = Array.from(
+          document.querySelectorAll('input[name="lichhoc"]:checked')
+        ).map((checkbox) => checkbox.value);
+
+        const lc = parseInt(document.getElementById("lc").value) || 0;
+        const rd = parseInt(document.getElementById("rd").value) || 0;
+        const tong = (lc + rd) * 5;
+
+        const avt = document.getElementById("avt").files[0]
+          ? document.getElementById("avt").files[0].name
+          : "Không có ảnh";
+
+        // chèn dòng vào bảng
+        const dong = table.insertRow(-1);
+        dong.insertCell(0).innerHTML = Hovaten;
+        dong.insertCell(1).innerHTML = Sdt;
+        dong.insertCell(2).innerHTML = ngaysinh;
+        dong.insertCell(3).innerHTML = gioitinhValue;
+        dong.insertCell(4).innerHTML = khoahoc;
+        dong.insertCell(5).innerHTML = lichhoc.join(", ");
+        dong.insertCell(6).innerHTML = tong;
+        dong.insertCell(7).innerHTML = avt;
+
+        // đóng modal và reset form
+        $("#mymodal").modal("hide");
+        forms.reset();
+      });
+    </script>
+  </body>
+</html>
