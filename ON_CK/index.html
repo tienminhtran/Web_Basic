@@ -147,23 +147,27 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-    function calculateGoal() {
-      const lc = parseFloat(document.getElementById('lc').value);
-      const rd = parseFloat(document.getElementById('rd').value);
-      return (lc + rd) * 5;
-    }
+
 
     function registerUser() {
       const name = document.getElementById('full-name').value;
+
       const phone = document.getElementById('phone').value;
+
       const dob = document.getElementById('dob').value;
+
       const gender = document.querySelector('input[name="gender"]:checked').value;
+
       const course = document.getElementById('course').value;
+
       const schedule = Array.from(document.querySelectorAll('input[name="schedule[]"]:checked'))
                              .map(input => input.value).join(', ');
+
       const lc = parseFloat(document.getElementById('lc').value);
       const rd = parseFloat(document.getElementById('rd').value);
-      const totalGoal = calculateGoal();
+      const totalGoal =  (lc + rd) * 5; 
+
+
       const profileImage = document.getElementById('profile-image').files[0] ? document.getElementById('profile-image').files[0].name : '';
 
       const table = document.getElementById('user-table').getElementsByTagName('tbody')[0];

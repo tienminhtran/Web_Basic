@@ -31,13 +31,9 @@
       <h2>Form Submission Example</h2>
 
       <!-- Button to Open Modal -->
-      <button
-        type="button"
-        data-toggle="modal"
-        data-target="#mymodal"
-      >
+      <a type="button" data-toggle="modal" data-target="#mymodal">
         Open Form
-      </button>
+      </a>
 
       <!-- Modal -->
       <div class="modal fade" id="mymodal" tabindex="-1">
@@ -58,7 +54,7 @@
             </div>
             <div class="modal-body">
               <form id="form">
-                <div >
+                <div>
                   <label for="Hovaten">Họ và tên:</label>
                   <input
                     type="text"
@@ -67,7 +63,7 @@
                     placeholder="Nhập họ tên"
                   />
                 </div>
-                <div >
+                <div>
                   <label for="Sdt">Số điện thoại:</label>
                   <input
                     type="text"
@@ -76,23 +72,23 @@
                     placeholder="Nhập số điện thoại"
                   />
                 </div>
-                <div >
+                <div>
                   <label for="ngaysinh">Ngày sinh:</label>
                   <input type="date" class="form-control" id="ngaysinh" />
                 </div>
-                <div >
+                <div>
                   <label>Giới tính:</label><br />
                   <input type="radio" name="gioitinh" value="Nam" /> Nam<br />
                   <input type="radio" name="gioitinh" value="Nữ" /> Nữ
                 </div>
-                <div >
+                <div>
                   <label for="khoahoc">Khóa học:</label>
                   <select class="form-control" id="khoahoc">
                     <option value="TOEIC 2 Kỹ Năng">TOEIC 2 Kỹ Năng</option>
                     <option value="TOEIC 4 Kỹ Năng">TOEIC 4 Kỹ Năng</option>
                   </select>
                 </div>
-                <div >
+                <div>
                   <label>Lịch học:</label><br />
                   <input type="checkbox" name="lichhoc" value="Thứ 2-4" /> Thứ
                   2-4 18h<br />
@@ -101,7 +97,7 @@
                   <input type="checkbox" name="lichhoc" value="Thứ 6-CN" /> Thứ
                   6-CN 18h
                 </div>
-                <div >
+                <div>
                   <label for="lc">Mục tiêu LC:</label>
                   <input
                     type="number"
@@ -110,7 +106,7 @@
                     placeholder="LC"
                   />
                 </div>
-                <div >
+                <div>
                   <label for="rd">Mục tiêu RD:</label>
                   <input
                     type="number"
@@ -119,11 +115,11 @@
                     placeholder="RD"
                   />
                 </div>
-                <div >
+                <div>
                   <label for="avt">Ảnh đại diện:</label>
-                  <input type="file"  id="avt" />
+                  <input type="file" id="avt" />
                 </div>
-                <button type="submit" >Đăng Ký</button>
+                <button type="submit">Đăng Ký</button>
               </form>
             </div>
           </div>
@@ -134,6 +130,7 @@
       <table id="table">
         <thead>
           <tr>
+            <th>STT</th>
             <th>Họ và tên</th>
             <th>Số điện thoại</th>
             <th>Ngày sinh</th>
@@ -156,46 +153,66 @@
     <script src="../js/bootstrap.min.js"></script>
 
     <script>
+      // Biến đếm để tự động tăng giá trị STT (Số thứ tự)
+      let count = 1;
+
+      // Lấy tham chiếu đến form và bảng
       const forms = document.getElementById("form");
       const table = document.getElementById("table").querySelector("tbody");
 
+      // Lắng nghe sự kiện submit từ form
       forms.addEventListener("submit", function (event) {
+        // Ngăn không cho trang bị tải lại khi form được gửi
         event.preventDefault();
 
-        const Hovaten = document.getElementById("Hovaten").value;
-        const Sdt = document.getElementById("Sdt").value;
-        const ngaysinh = document.getElementById("ngaysinh").value;
+        // Gán STT bằng giá trị biến đếm và tăng giá trị biến đếm sau mỗi lần submit
+        const STT = count++;
+
+        // Thu thập dữ liệu từ các input trong form
+        const Hovaten = document.getElementById("Hovaten").value; // Họ và tên
+        const Sdt = document.getElementById("Sdt").value; // Số điện thoại
+        const ngaysinh = document.getElementById("ngaysinh").value; // Ngày sinh
+
+        // Lấy giá trị của giới tính từ các nút radio
         const gioitinh = document.querySelector(
           'input[name="gioitinh"]:checked'
         );
         const gioitinhValue = gioitinh ? gioitinh.value : "Không chọn";
+
+        // Lấy giá trị của khóa học
         const khoahoc = document.getElementById("khoahoc").value;
 
+        // Thu thập lịch học (các checkbox được chọn)
         const lichhoc = Array.from(
           document.querySelectorAll('input[name="lichhoc"]:checked')
         ).map((checkbox) => checkbox.value);
 
-        const lc = parseInt(document.getElementById("lc").value) || 0;
-        const rd = parseInt(document.getElementById("rd").value) || 0;
-        const tong = (lc + rd) * 5;
+        // Tính tổng điểm dựa trên giá trị LC và RD
+        const lc = parseInt(document.getElementById("lc").value) || 0; // Mục tiêu LC
+        const rd = parseInt(document.getElementById("rd").value) || 0; // Mục tiêu RD
+        const tong = (lc + rd) * 5; // Công thức tính tổng điểm
 
+        // Lấy tên file ảnh đại diện (nếu có)
         const avt = document.getElementById("avt").files[0]
           ? document.getElementById("avt").files[0].name
           : "Không có ảnh";
 
-        // chèn dòng vào bảng
+        // Chèn dòng dữ liệu vào bảng
         const dong = table.insertRow(-1);
-        dong.insertCell(0).innerHTML = Hovaten;
-        dong.insertCell(1).innerHTML = Sdt;
-        dong.insertCell(2).innerHTML = ngaysinh;
-        dong.insertCell(3).innerHTML = gioitinhValue;
-        dong.insertCell(4).innerHTML = khoahoc;
-        dong.insertCell(5).innerHTML = lichhoc.join(", ");
-        dong.insertCell(6).innerHTML = tong;
-        dong.insertCell(7).innerHTML = avt;
+        dong.insertCell(0).innerHTML = STT; // Cột Số thứ tự
+        dong.insertCell(1).innerHTML = Hovaten; // Cột Họ và tên
+        dong.insertCell(2).innerHTML = Sdt; // Cột Số điện thoại
+        dong.insertCell(3).innerHTML = ngaysinh; // Cột Ngày sinh
+        dong.insertCell(4).innerHTML = gioitinhValue; // Cột Giới tính
+        dong.insertCell(5).innerHTML = khoahoc; // Cột Khóa học
+        dong.insertCell(6).innerHTML = lichhoc.join(", "); // Cột Lịch học
+        dong.insertCell(7).innerHTML = tong; // Cột Tổng điểm
+        dong.insertCell(8).innerHTML = avt; // Cột Ảnh đại diện
 
-        // đóng modal và reset form
+        // Đóng modal sau khi submit
         $("#mymodal").modal("hide");
+
+        // Reset form để chuẩn bị cho lần nhập tiếp theo
         forms.reset();
       });
     </script>
